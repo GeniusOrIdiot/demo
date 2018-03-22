@@ -9,5 +9,9 @@ public class With {
         for (int i = 0; i < 10; i++) {
             System.out.println(i & 7);
         }
+
+        Integer a = new Integer(1);
+        Integer b = new Integer(1);
+        System.out.println(a == b);
     }
 }

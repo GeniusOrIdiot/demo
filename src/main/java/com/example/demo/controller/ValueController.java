@@ -1,12 +1,11 @@
 package com.example.demo.controller;
 
 import com.example.demo.service.ValueService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.Map;
 
 /**
  * @author LiuYJ
@@ -28,5 +27,13 @@ public class ValueController {
     @GetMapping("/model")
     public ModelAndView modelData() {
         return new ModelAndView("/model").addObject("myName", "LiuYajun");
+    }
+
+    @RequestMapping(value = "/pOrg", method = {RequestMethod.GET, RequestMethod.POST})
+    public String getPostParams(HttpServletRequest request,
+                                @RequestBody String body,
+                                @RequestParam Map<String, Object> params) {
+        valueService.doPOrG(body, params);
+        return "success" + request.getQueryString();
     }
 }

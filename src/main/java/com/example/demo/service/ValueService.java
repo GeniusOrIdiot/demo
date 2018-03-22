@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Map;
+
 /**
  * @author LiuYJ
  * @since 2018/1/27
@@ -58,5 +60,10 @@ public class ValueService {
     @Transactional(isolation = Isolation.READ_COMMITTED)
     public void _subtractValue(int id, int change) {
         valuesRepository.subtractValue(id, change);
+    }
+
+    public void doPOrG(String body, Map params) {
+        log.info("---body---:" + body);
+        log.info("---params---:" + params);
     }
 }

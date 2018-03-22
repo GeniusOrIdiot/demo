@@ -1,10 +1,14 @@
 package com.example.demo.java_code;
 
-public class Cell {
-    String name;
-    int age;
+import com.google.gson.annotations.SerializedName;
 
-    public Cell() {
+public class Cell {
+    @SerializedName("mmmm")
+    private String name;
+    @SerializedName("aaaaa")
+    private int age;
+
+    Cell() {
     }
 
     public Cell(String name, int age) {

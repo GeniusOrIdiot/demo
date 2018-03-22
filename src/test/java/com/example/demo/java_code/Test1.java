@@ -1,5 +1,8 @@
 package com.example.demo.java_code;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +19,7 @@ public class Test1 {
         cell.setName("c");
         list.add(cell);
         System.out.println(list.size());
+        System.out.println(new GsonBuilder().create().toJson(cell));
 
         for(Cell c : list){
             System.out.println(c);
