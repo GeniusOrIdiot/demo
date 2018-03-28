@@ -8,7 +8,7 @@ public class BaseException extends RuntimeException {
     private int code;
     private String msg;
 
-    BaseException(int code) {
+    public BaseException(int code) {
         this.code = code;
         this.msg = ResultCode.getMsg(code);
     }

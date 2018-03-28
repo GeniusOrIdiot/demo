@@ -8,15 +8,15 @@ spring:
     password: moon1208
     driver-class-name: com.mysql.jdbc.Driver
     dbcp2:
-          initial-size: 5
-          max-idle: 5
-          max-total: 20
-          min-idle: 3
-          validation-query: select 1
-          test-on-borrow: true
-          test-while-idle: true
-          test-on-return: false
-          max-wait-millis: 10000
+      initial-size: 5
+      max-idle: 5
+      max-total: 20
+      min-idle: 3
+      validation-query: select 1
+      test-on-borrow: true
+      test-while-idle: true
+      test-on-return: false
+      max-wait-millis: 10000
   jpa:
     database: mysql
     show-sql: true
@@ -25,18 +25,58 @@ spring:
         strategy: org.springframework.boot.orm.jpa.hibernate.SpringNamingStrategy
 
   thymeleaf:
-      prefix: classpath:/templates/
-      suffix: .html
-      mode: HTML5
-      encoding: UTF-8
-      content-type: text/html
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML5
+    encoding: UTF-8
+    content-type: text/html
+
+  activemq:
+    broker-url: tcp://118.25.15.139:61616
+    user: admin
+    password: admin
+    pool:
+      enabled: true
+      max-connections: 50
+      expiry-timeout: 10000
+      idle-timeout: 30000
+
+  jms:
+    listener:
+      acknowledge-mode: client
+
 
 my-name: demo
 
 thirdparty:
   alipay:
-        alipay-url: https://openapi.alipaydev.com/gateway.do
-        app-id: 2016091200491458
-        app-private-key: MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC+b9w+XRILA5Dwd0XwocNoyULxGfRL4SOCxPMAEk6WNvlSiebbq2AMMDPZ0v2RBOn4gI3qKtgmQmpGkgeB1BdrIEIfw6Pw7g71JXy5cGdzlv5TKOLMni9f1xs6LYr3JXvLo6Rvy/456BDcTQG5VYXyKnEobRP7MnaDcMpipuWdjqy8GJWBtm2adczJeXqIUqdBXmxBAMajBMsrwltX7XWpEEXXm4cuMe1OIe+312XhXBTmqy12Zy8TOVXOQUrwev6POKVZT4CHllKvQE/Tk6OLvOUF6kzGz9YIxkBJXA8yAYVDcGWgUcvrAuOnbGBkKPUwdjF4FnGxUeikwThEz7o9AgMBAAECggEAJPD8D1jsjBhoAE2S0qf+iRApnS2Et0d4JQDhho0Gk5scaEd58fjfi9254TJNn9kNLfh6Dwe6oElX5lKjhCrJVC2QxiqkXbNAUYuxEyPb3Y9XzHfs7vZsiDHpBTMadvDdf9ZBqrIuobsDskh54iLV9fEHvGjUbHEQjlTN3a80cYiKcNeQdbXEXgZqu7/ZW3R4cMbAyIBq84jtFDljatbkaVXrKMDNvwOXz4f8+vUxpdcT9d65k5UhBl/A0e/tDdiC74eaU9esvGhDX61WKtirWoczZ0e1nGlyDKHrU01izFfkIvOlZMHUXbaflL1opqAUnQ/O248honYLxRoHq/uQoQKBgQD41m5PeeLXpZl0P6tnSsH+6nP4WrdO2VfNvSX90aEubKjuK6PowQj5P1Kh57/5cN/QG9b5cnDPokC+aFdiF9uYFdEqNFIsn89/1lMofXs8dKNR6PWyTD2wdNXGBszNOyAzK1bYYkOZ7pp8wLpruVQaYhIDx94xf5HbTLQthWdmSQKBgQDD6xobjm/Yp2sueBKjmHdjTiwrDzN4JrXl8w/MDSDRXspyN//yCdFm2wq82UARVurIq3Ee7Q11I4JNtBHr86zbKqNZzxsUEeIDRxncUqKT7loTDZa6QJiAMTV8yvPRtPAsCeM3K1gDuHyDREV4dmFdbmPwPk5BpwN8YCuNzFSkVQKBgQDMO0qMZnB9J8h79enbPCte6tTGCMacq5v6G318BjrxHHPGDwFXfl+8GnHaupgAxdicOM1HLNtUP0o+POtDcmtkNrvWlNzBDWVD+geEmwCzjNOi3b4SWarkEfCGuHwNEbMK7E46COSNCZ24OIKI+bICeW1ptvgxzg9LW3giSHSmKQKBgD05Ou9hk5Igv13GKAz3mFdwFl1eYrcpYa56RnV9pMPI23rWBSWd69I4oSJiwaKphrUu3irL6WixsAaYPwF9JIdYy7NFBTFAZWCg13QCXsvbsEpD9NY/WWi1+AEHayodYPBiJp8W7Go9PKvIqez7EXIhDRoGXm4lwvEbHIEzWUABAoGAMS4M5ttNe6XhpEYHWC39P9wI5pXkc378lIaI/vPemWc7HvJja4gXSZciWFOF2RPdH7x9hDfkRaOUaa+VcifAT13BQxYjM5m5t4PlLdyG2XT/fMLmNjoV8A4xYC3CfTAW8f7yv3/umLu6tw2g8HdqWW2LjBkeP9sDPe2BP3et9oA=
-        alipay-public-key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyVafJZh1vPwZDLkyBX5/fTgzJQqegWSx9FJA2+f074ZizVO1r+WMix991wwFb+UIstz7V6sihCYUy1ipShn6hAOI2GCNQSaZdP0ZtaWRaMbcG6NmO23KgTpu+DYJU51/81OgwG1MsPmTrExauYkdUWSYHBO1DLE+eQPD930+907+Dhf+XkjrqZtB6jq1dsaUrVt+Ef3shPh1RYbkE+njKh4DA+rA/yPZ//8byasIpSOOudQnRbAuHU+ZF5QaO3jlSLkgKgfhZS5LLfxg2OWXHJgRg6WWBrEAh8dteZLKXo+2c+9iQQZd64ew5YKOE+6fvH4Fu895T2hzKPSFlcVdgQIDAQAB
-
+    alipay-url: https://openapi.alipaydev.com/gateway.do
+    app-id: 2016091200491458
+    app-private-key: MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC+b9w+XRILA5Dwd0XwocNoyULxG
+                     fRL4SOCxPMAEk6WNvlSiebbq2AMMDPZ0v2RBOn4gI3qKtgmQmpGkgeB1BdrIEIfw6Pw7g71JXy5cG
+                     dzlv5TKOLMni9f1xs6LYr3JXvLo6Rvy/456BDcTQG5VYXyKnEobRP7MnaDcMpipuWdjqy8GJWBtm2
+                     adczJeXqIUqdBXmxBAMajBMsrwltX7XWpEEXXm4cuMe1OIe+312XhXBTmqy12Zy8TOVXOQUrwev6P
+                     OKVZT4CHllKvQE/Tk6OLvOUF6kzGz9YIxkBJXA8yAYVDcGWgUcvrAuOnbGBkKPUwdjF4FnGxUeikw
+                     ThEz7o9AgMBAAECggEAJPD8D1jsjBhoAE2S0qf+iRApnS2Et0d4JQDhho0Gk5scaEd58fjfi9254T
+                     JNn9kNLfh6Dwe6oElX5lKjhCrJVC2QxiqkXbNAUYuxEyPb3Y9XzHfs7vZsiDHpBTMadvDdf9ZBqrI
+                     uobsDskh54iLV9fEHvGjUbHEQjlTN3a80cYiKcNeQdbXEXgZqu7/ZW3R4cMbAyIBq84jtFDljatbk
+                     aVXrKMDNvwOXz4f8+vUxpdcT9d65k5UhBl/A0e/tDdiC74eaU9esvGhDX61WKtirWoczZ0e1nGlyD
+                     KHrU01izFfkIvOlZMHUXbaflL1opqAUnQ/O248honYLxRoHq/uQoQKBgQD41m5PeeLXpZl0P6tnSs
+                     H+6nP4WrdO2VfNvSX90aEubKjuK6PowQj5P1Kh57/5cN/QG9b5cnDPokC+aFdiF9uYFdEqNFIsn89
+                     /1lMofXs8dKNR6PWyTD2wdNXGBszNOyAzK1bYYkOZ7pp8wLpruVQaYhIDx94xf5HbTLQthWdmSQKB
+                     gQDD6xobjm/Yp2sueBKjmHdjTiwrDzN4JrXl8w/MDSDRXspyN//yCdFm2wq82UARVurIq3Ee7Q11I
+                     4JNtBHr86zbKqNZzxsUEeIDRxncUqKT7loTDZa6QJiAMTV8yvPRtPAsCeM3K1gDuHyDREV4dmFdbm
+                     PwPk5BpwN8YCuNzFSkVQKBgQDMO0qMZnB9J8h79enbPCte6tTGCMacq5v6G318BjrxHHPGDwFXfl+
+                     8GnHaupgAxdicOM1HLNtUP0o+POtDcmtkNrvWlNzBDWVD+geEmwCzjNOi3b4SWarkEfCGuHwNEbMK
+                     7E46COSNCZ24OIKI+bICeW1ptvgxzg9LW3giSHSmKQKBgD05Ou9hk5Igv13GKAz3mFdwFl1eYrcpY
+                     a56RnV9pMPI23rWBSWd69I4oSJiwaKphrUu3irL6WixsAaYPwF9JIdYy7NFBTFAZWCg13QCXsvbsE
+                     pD9NY/WWi1+AEHayodYPBiJp8W7Go9PKvIqez7EXIhDRoGXm4lwvEbHIEzWUABAoGAMS4M5ttNe6X
+                     hpEYHWC39P9wI5pXkc378lIaI/vPemWc7HvJja4gXSZciWFOF2RPdH7x9hDfkRaOUaa+VcifAT13B
+                     QxYjM5m5t4PlLdyG2XT/fMLmNjoV8A4xYC3CfTAW8f7yv3/umLu6tw2g8HdqWW2LjBkeP9sDPe2BP
+                     3et9oA=
+    alipay-public-key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyVafJZh1vPwZDLkyBX5/fTgzJQqegWS
+                       x9FJA2+f074ZizVO1r+WMix991wwFb+UIstz7V6sihCYUy1ipShn6hAOI2GCNQSaZdP0ZtaWRaM
+                       bcG6NmO23KgTpu+DYJU51/81OgwG1MsPmTrExauYkdUWSYHBO1DLE+eQPD930+907+Dhf+Xkjrq
+                       ZtB6jq1dsaUrVt+Ef3shPh1RYbkE+njKh4DA+rA/yPZ//8byasIpSOOudQnRbAuHU+ZF5QaO3jl
+                       SLkgKgfhZS5LLfxg2OWXHJgRg6WWBrEAh8dteZLKXo+2c+9iQQZd64ew5YKOE+6fvH4Fu895T2h
+                       zKPSFlcVdgQIDAQAB

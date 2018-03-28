@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
  * @since 19/03/2018
  */
 @Data
-@Configuration
+@Configuration()
 @ConfigurationProperties(prefix = "thirdparty.alipay")
 public class AlipayConfig {
     private String alipayUrl = "https://openapi.alipay.com/gateway.do";
