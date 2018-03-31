@@ -8,23 +8,32 @@ package com.example.demo.java_code;
  * </p>
  */
 public class Handle {
-    StringBuffer str = new StringBuffer("good");
+    private String src = "nice";
 
-    char[] ch = { 'a', 'b', 'c' };
+    private StringBuffer str = new StringBuffer("good");
+
+    private char[] ch = {'a', 'b', 'c'};
 
     public static void main(String args[]) {
 
         Handle ex = new Handle();
 
-        ex.change(ex.str, ex.ch);
+        System.out.println(ex.src.hashCode());
+
+        ex.change(ex.src, ex.str, ex.ch);
 
         System.out.print(ex.str + " and ");
 
-        System.out.print(ex.ch);
+        System.out.println(ex.ch);
+
+        System.out.println(ex.src + "----hash:" + ex.src.hashCode());
 
     }
 
-    public void change(StringBuffer str, char ch[]) {
+    private void change(String src, StringBuffer str, char ch[]) {
+        src = src.replace("n", "r");
+
+        System.out.println(src.hashCode());
 
         str.append("a");
 

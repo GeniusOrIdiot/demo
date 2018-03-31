@@ -1,20 +1,68 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+>
 <head>
-    <meta charset="utf-8">
-    <title>演示：使用jquery.qrcode生成二维码</title>
-    <link rel="stylesheet" type="text/css" href="../css/main.css"/>
-    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="http://cdn.staticfile.org/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
-    <script type="text/javascript">
-        $(function(){
-            $('#qrcode').qrcode("http://www.baidu.com")})
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="UTF-8"/>
+    <title>扫码支付</title>
+    <style>
+        canvas {
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        h3 {
+            text-align: center;
+        }
+        #white {
+            position: absolute;
+            width: 52px;
+            height: 52px;
+            top:0;left:0; right:0;bottom:0;
+            margin: auto;
+            z-index: 99;
+            border-radius: 10px;
+            background-color: white;
+        }
+        #qrCodeIco {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            top:0;left:0; right:0;bottom:0;
+            margin: auto;
+            z-index: 99;
+            border-radius: 10px;
+        }
+    </style>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+    <script th:inline="javascript">
+        $(function () {
+            var text = "http://www.baidu.com/humnga/isjd?ssuqwe";
+            if (text === null) {
+                $('#qrcode').append('<div style="position: absolute; height: 60px; top:0;left:0; right:0;bottom:0;margin: auto;z-index: 999; font-size: 36px">二维码已失效</div>')
+            } else {
+                $('#qrcode').qrcode({
+                    render: 'canvas',//渲染方式table  canvas，table方式兼容更好些
+                    text: text,
+                });
+                $('#qrcode').append('<div id="white"></div>')
+                $('#qrcode').append('<img id="qrCodeIco" src="data:image/png;base64,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" />');
+            }
+        })
+    </script>
+    <script th:inline="javascript">
+
     </script>
 </head>
-
 <body>
-<div id="main">
-    <div id="qrcode"></div>
+<h3 th:text="支付宝/微信 扫一扫付钱">扫一扫向我付钱</h3>
+<div id="qrcode" style="text-align: center;margin-top: 40%">
 </div>
 </body>
 </html>

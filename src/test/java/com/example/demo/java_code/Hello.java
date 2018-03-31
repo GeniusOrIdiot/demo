@@ -8,7 +8,7 @@ package com.example.demo.java_code;
  * </p>
  */
 public class Hello {
-    public Hello() {
+    private Hello() {
         System.out.println("Hello");
     }
 
@@ -23,7 +23,7 @@ public class Hello {
     public static void main(String[] args) {
         new Hello();
         Hello a = new Hello();
-        Hello b = a;
+        Hello b;
         b = new Hello();
         System.out.println(a);
         System.out.println(b);
