@@ -67,11 +67,11 @@
         #scan {
             background-color: #09ad06;
             padding-top: 20%;
-            padding-bottom: 100%;
+            padding-bottom: 90%;
         }
 
         #logo {
-            margin-top: 60px;
+            margin-top: 50px;
             width: 100px;
             height: 50px;
         }
@@ -81,7 +81,7 @@
     <script src="js/jquery.qrcode.min.js"></script>
     <script th:inline="javascript">
         $(function () {
-            const text = null;
+            const text = "www.baidu.com";
             const qrCode = $('#qrCode');
             if (text === null) {
                 qrCode.append('<div id="failure">二维码已失效</div>')
