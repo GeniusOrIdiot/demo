@@ -1,5 +1,7 @@
 package com.example.demo.java_code;
 
+import java.security.Security;
+
 /**
  * Copyright (c) 2017-present, Demart Corporation.
  * All rights reserved.
@@ -21,6 +23,8 @@ public class Hello {
     }
 
     public static void main(String[] args) {
+        System.out.println(System.getProperty("java.home"));
+        System.out.println(Security.getProperty("crypto.policy"));
         new Hello();
         Hello a = new Hello();
         Hello b;

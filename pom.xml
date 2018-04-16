@@ -92,6 +92,22 @@
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
 		</dependency>
+
+		<dependency>
+			<groupId>com.zhongzijinfu.commons</groupId>
+			<artifactId>seed-commons</artifactId>
+			<version>1.0.10-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.nongfenqi</groupId>
+			<artifactId>approve-process</artifactId>
+			<version>1.0.4-RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.7</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -103,5 +119,23 @@
 		</plugins>
 	</build>
 
+	<repositories>
+		<repository>
+			<id>snapshots</id>
+			<url>http://nexus.dev.zhongzijinfu.com/nexus/content/repositories/snapshots</url>
+		</repository>
+		<repository>
+			<id>thirdparty</id>
+			<url>http://nexus.dev.zhongzijinfu.com/nexus/content/repositories/thirdparty</url>
+		</repository>
+		<repository>
+			<id>releases</id>
+			<url>http://nexus.dev.zhongzijinfu.com/nexus/content/repositories/releases</url>
+		</repository>
+		<repository>
+			<id>central</id>
+			<url>http://nexus.dev.zhongzijinfu.com/nexus/content/repositories/central</url>
+		</repository>
+	</repositories>
 
 </project>

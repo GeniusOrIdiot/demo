@@ -45,6 +45,17 @@ spring:
     listener:
       acknowledge-mode: client
 
+approve:
+  ap:
+    corp-id: ding02323e3f1d13ae10
+    corp-secret: wbJFem_SWy7q2EIpDLcw6u6DhoeRPzsN6BDr7Pc53Mcm_BgoTAtfFh3bjvqWChGL
+    api-url: https://oapi.dingtalk.com
+    agent-id: 33594183
+    process-code: PROC-3KYJ23FV-4C7UMB69SCM3B1TFLHWS2-EXH75TFJ-5
+    token: nongfenqi
+    aes-key: ZC5MWOE8inNkJRbUw3ay9OXl27bnd0SLqXTwfAIqgir
+
+
 
 my-name: demo
 
