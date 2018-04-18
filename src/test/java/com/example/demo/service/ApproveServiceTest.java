@@ -1,6 +1,5 @@
 package com.example.demo.service;
 
-import com.nongfenqi.approve.adp.exception.AdpException;
 import com.nongfenqi.approve.adp.model.request.AdjustPriceDetailRequest;
 import com.nongfenqi.approve.adp.model.request.AdjustPriceRequest;
 import org.junit.Test;
@@ -25,21 +24,17 @@ public class ApproveServiceTest {
 
     @Test
     public void testSend() {
-        try {
-            approveService.send(buildApproveDto());
-        } catch (AdpException e) {
-            System.out.println(e.getMsg());
-        }
+        approveService.send(buildApproveDto());
     }
 
     private AdjustPriceRequest buildApproveDto() {
         return AdjustPriceRequest.builder()
                 .orderId("AO0001002")
                 .customerName("雅俊")
-                .userId("1203251357-186916497")
+                .userId("120325135721413309")
                 .userName("小俊")
-                .ccList(new ArrayList<>(Collections.singleton("0861675150122379809")))
-                .approvers(new ArrayList<>(Collections.singletonList("1203251357-186916497")))
+                .ccList(new ArrayList<>(Collections.singleton("120325135721413309")))
+                .approvers(new ArrayList<>(Collections.singletonList("120325135721413309")))
                 .goods(new ArrayList<>(Collections.singletonList(
                         AdjustPriceDetailRequest.builder()
                                 .orderGoodsId("AOG01239")
@@ -54,7 +49,7 @@ public class ApproveServiceTest {
 
     @Test
     public void query() {
-        approveService.query("7040dcc5-9e8f-44ff-ae32-bc5c8d037160");
+        approveService.query("e2ffc83b-151a-4152-b18f-d0c2ecd1d7c0");
     }
 
 }

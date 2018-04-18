@@ -101,12 +101,17 @@
 		<dependency>
 			<groupId>com.nongfenqi</groupId>
 			<artifactId>approve-process</artifactId>
-			<version>1.0.4-RELEASE</version>
+			<version>1.0.7-RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
 			<version>1.2.7</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.17</version>
 		</dependency>
 	</dependencies>
 
