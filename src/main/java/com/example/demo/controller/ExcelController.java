@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.annotation.Animation;
 import com.example.demo.service.ExcelService;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +15,7 @@ import java.io.OutputStream;
  * @since 18/04/2018
  */
 @RestController
+@Animation
 public class ExcelController {
     private ExcelService excelService;
 
@@ -23,6 +25,8 @@ public class ExcelController {
 
     @RequestMapping(value = "/excel/export")
     public void exportExcel(HttpServletResponse response) throws IOException {
+        response.setContentType("application/vnd.ms-excel");
+//        response.setHeader("Content-disposition", "attachment;filename=" + URLEncoder.encode("导出.xls", "gbk"));
         HSSFWorkbook workbook = excelService.exportExcel();
         OutputStream outputStream = response.getOutputStream();
         workbook.write(outputStream);

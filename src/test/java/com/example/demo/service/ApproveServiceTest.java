@@ -10,6 +10,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 /**
@@ -31,10 +32,10 @@ public class ApproveServiceTest {
         return AdjustPriceRequest.builder()
                 .orderId("AO0001002")
                 .customerName("雅俊")
-                .userId("120325135721413309")
+                .userId("1203251357-186916497")
                 .userName("小俊")
-                .ccList(new ArrayList<>(Collections.singleton("120325135721413309")))
-                .approvers(new ArrayList<>(Collections.singletonList("120325135721413309")))
+                .ccList(new ArrayList<>(Arrays.asList("1203251357-186916497", "67072831-874948550")))
+                .approvers(new ArrayList<>(Collections.singletonList("67072831-874948550")))
                 .goods(new ArrayList<>(Collections.singletonList(
                         AdjustPriceDetailRequest.builder()
                                 .orderGoodsId("AOG01239")
@@ -49,7 +50,7 @@ public class ApproveServiceTest {
 
     @Test
     public void query() {
-        approveService.query("e2ffc83b-151a-4152-b18f-d0c2ecd1d7c0");
+        approveService.query("9027517e-a5f4-498e-8074-102b52426847");
     }
 
 }

@@ -19,6 +19,7 @@ public class ApproveService {
     }
 
     public void query(String approvalId) {
+
         System.out.println(adjustPriceService.query(approvalId).getApproverUserids());
     }
 }

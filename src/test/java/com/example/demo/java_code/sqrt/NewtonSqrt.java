@@ -1,4 +1,4 @@
-package com.example.demo.java_code;
+package com.example.demo.java_code.sqrt;
 
 /**
  * 牛顿迭代法。
