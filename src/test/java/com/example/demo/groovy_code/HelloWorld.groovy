@@ -6,9 +6,16 @@ def person = new Person('B', 2)
 
 println(person.name ? firstChar(person.name) : null)
 
+def calendar = Calendar.getInstance()
+calendar.set(Calendar.DAY_OF_MONTH, 1)
+println(new Date(calendar.getTimeInMillis()))
+println(calendar.get(Calendar.MONTH))
+
 static def firstChar(str) {
     return str.charAt(0)
 }
+
+new Boy().introduce()
 
 class Person {
     def name
@@ -23,5 +30,17 @@ class Person {
 
     String toString() {
         return "$name, $age"
+    }
+
+    def introduce() {
+        println 'Im a person'
+    }
+}
+
+class Boy extends Person {
+
+    def introduce() {
+        println 'Im a boy'
+        super.introduce()
     }
 }

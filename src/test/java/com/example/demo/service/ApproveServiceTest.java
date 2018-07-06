@@ -32,16 +32,20 @@ public class ApproveServiceTest {
         return AdjustPriceRequest.builder()
                 .orderId("AO0001002")
                 .customerName("雅俊")
-                .userId("1203251357-186916497")
+//                .userId("1203251357-186916497")
+                .userId("120325135721413309")
                 .userName("小俊")
-                .ccList(new ArrayList<>(Arrays.asList("1203251357-186916497", "67072831-874948550")))
-                .approvers(new ArrayList<>(Collections.singletonList("67072831-874948550")))
+//                .ccList(new ArrayList<>(Arrays.asList("1203251357-186916497", "67072831-874948550")))
+                .ccList(new ArrayList<>(Arrays.asList("120325135721413309")))
+//                .approvers(new ArrayList<>(Collections.singletonList("67072831-874948550")))
+                .approvers(new ArrayList<>(Collections.singletonList("120325135721413309")))
                 .goods(new ArrayList<>(Collections.singletonList(
                         AdjustPriceDetailRequest.builder()
                                 .orderGoodsId("AOG01239")
                                 .goodsName("MacBook")
                                 .originalUnitPrice(new BigDecimal("12000"))
                                 .adjustUnitPrice(new BigDecimal("9999"))
+                                .cashDiscountPrice(new BigDecimal("11000"))
                                 .weight(new BigDecimal("1"))
                                 .remark("测试")
                                 .build())))
@@ -50,7 +54,7 @@ public class ApproveServiceTest {
 
     @Test
     public void query() {
-        approveService.query("9027517e-a5f4-498e-8074-102b52426847");
+        approveService.query("a5466fd2-e582-43f7-a9ba-222ef9c082f8");
     }
 
 }
