@@ -15,6 +15,17 @@ static def firstChar(str) {
     return str.charAt(0)
 }
 
+def columns = ['a', 'b', 'c']
+def map = [
+        'a': 1,
+        'b': 2,
+        'c': 3
+]
+for (i in columns) {
+    println(map.get(i))
+}
+
+
 new Boy().introduce()
 
 class Person {
