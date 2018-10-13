@@ -34,7 +34,7 @@ public class ValueService {
 
     @Transactional(isolation = Isolation.READ_COMMITTED)
     public void addValue(int id, int change) {
-        Values values = valuesRepository.findOne(id);
+        Values values = valuesRepository.findById(id).get();
         int value = values.getValue();
         log.info("Thread:[{}], previous value:[{}]", Thread.currentThread().getName(), value);
         values.setValue(value + change);
@@ -44,7 +44,7 @@ public class ValueService {
 
     @Transactional(isolation = Isolation.READ_COMMITTED)
     public void subtractValue(int id, int change) {
-        Values values = valuesRepository.findOne(id);
+        Values values = valuesRepository.findById(id).get();
         int value = values.getValue();
         log.info("Thread:[{}], previous value:[{}]", Thread.currentThread().getName(), value);
         values.setValue(value - change);

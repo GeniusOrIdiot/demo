@@ -1,4 +1,4 @@
-package com.example.demo.java_code;
+package com.example.demo.java_code.leetcode.rectangle;
 
 import java.util.Arrays;
 

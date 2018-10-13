@@ -1,5 +1,9 @@
 package com.example.demo.java_code;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 /**
  * Copyright (c) 2017-present, Demart Corporation.
  * All rights reserved.
@@ -9,20 +13,20 @@ package com.example.demo.java_code;
  */
 public class ListTest {
     public static void main(String[] args) {
-        /*List<Cell> list = new ArrayList<>();
+        List<Cell> list = new ArrayList<>();
         Cell cell = new Cell("a", 3);
         list.add(cell);
         System.out.println(list.get(0));
         Cell cell1 = list.get(0);
         cell1.setName("b");
-        System.out.println(list.get(0));*/
-
-        Cell cell = new Cell();
-        try {
-            Cell cell1 = cell.clone();
-            System.out.println(cell1==cell);
-        } catch (CloneNotSupportedException e) {
-            e.printStackTrace();
+        System.out.println(list.get(0));
+        list.add(new Cell("c", 12));
+        System.out.println(list);
+        Iterator<Cell> it = list.iterator();
+        while (it.hasNext()) {
+            it.next();
+            it.remove();
         }
+        System.out.println(list);
     }
 }

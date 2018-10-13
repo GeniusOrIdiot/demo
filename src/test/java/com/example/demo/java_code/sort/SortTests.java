@@ -1,5 +1,9 @@
 package com.example.demo.java_code.sort;
 
+import com.example.demo.java_code.Cell;
+
+import java.util.*;
+
 /**
  * 排序算法统一测试
  *
@@ -17,5 +21,12 @@ public class SortTests {
 
         Sort shellSort = new ShellSort();
         shellSort.sort(arr);
+
+        List<Cell> cells = new ArrayList<>();
+        cells.add(new Cell("a", 15));
+        cells.add(new Cell("b", 12));
+        cells.add(new Cell("c", 13));
+        cells.sort(Comparator.comparingInt(Cell::getAge));
+        System.out.println(cells);
     }
 }

@@ -1,4 +1,4 @@
-package com.example.demo.java_code;
+package com.example.demo.java_code.hadoop_mapred;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;

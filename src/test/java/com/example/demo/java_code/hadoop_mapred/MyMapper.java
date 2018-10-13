@@ -1,4 +1,4 @@
-package com.example.demo.java_code;
+package com.example.demo.java_code.hadoop_mapred;
 
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
