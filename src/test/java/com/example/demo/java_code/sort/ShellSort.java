@@ -9,10 +9,10 @@ import java.util.Arrays;
  * @author LiuYJ
  * @since 2018/8/17
  */
-public class ShellSort extends Sort {
+public class ShellSort extends AbstractSort {
 
     @Override
-    void sort(int[] arr) {
+    public void sort(int[] arr) {
         System.out.println("================Shell Sorting...================");
         int n = arr.length;
         int h = 1;

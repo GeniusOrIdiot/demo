@@ -19,10 +19,10 @@ import java.util.Arrays;
  * @author LiuYJ
  * @since 2018/8/17
  */
-public class SelectSort extends Sort {
+public class SelectSort extends AbstractSort {
 
     @Override
-    void sort(int[] arr) {
+    public void sort(int[] arr) {
         System.out.println("================Select Sorting...================");
         for (int i = 0; i < arr.length; i++) {
             int min = i;

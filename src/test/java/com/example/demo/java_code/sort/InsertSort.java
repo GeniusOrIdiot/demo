@@ -19,10 +19,10 @@ import java.util.Arrays;
  * @author LiuYJ
  * @since 2018/8/17
  */
-public class InsertSort extends Sort {
+public class InsertSort extends AbstractSort {
 
     @Override
-    void sort(int[] arr) {
+    public void sort(int[] arr) {
         System.out.println("================Insert Sorting...================");
         for (int i = 1; i < arr.length; i++) {
             for (int j = 0; j < i; j++) {
