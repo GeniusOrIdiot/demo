@@ -1,5 +1,7 @@
 package com.example.demo.java_code;
 
+import com.example.demo.java_code.obj.Cell;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

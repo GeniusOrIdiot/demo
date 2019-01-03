@@ -1,6 +1,6 @@
 package com.example.demo.java_code;
 
-import com.google.gson.Gson;
+import com.example.demo.java_code.obj.Cell;
 import com.google.gson.GsonBuilder;
 
 import java.util.ArrayList;

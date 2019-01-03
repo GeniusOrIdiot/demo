@@ -1,4 +1,4 @@
-package com.example.demo.java_code;
+package com.example.demo.java_code.obj;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -8,7 +8,7 @@ public class Cell {
     @SerializedName("aaaaa")
     private int age;
 
-    Cell() {
+    public Cell() {
     }
 
     public Cell(String name, int age) {
