@@ -2,7 +2,7 @@ package com.example.demo.java_code.obj;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Cell {
+public class Cell implements Comparable<Cell> {
     @SerializedName("mmmm")
     private String name;
     @SerializedName("aaaaa")
@@ -43,5 +43,10 @@ public class Cell {
     @Override
     public Cell clone() throws CloneNotSupportedException {
         return (Cell) super.clone();
+    }
+
+    @Override
+    public int compareTo(Cell o) {
+        return this.age - o.age;
     }
 }
