@@ -6,7 +6,7 @@ spring:
     url: jdbc:mysql://localhost:3306/demo
     username: root
     password: moon1208
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
     dbcp2:
       initial-size: 5
       max-idle: 5
@@ -20,16 +20,14 @@ spring:
   jpa:
     database: mysql
     show-sql: true
-    hibernate:
-      naming:
-        strategy: org.springframework.boot.orm.jpa.hibernate.SpringNamingStrategy
 
   thymeleaf:
     prefix: classpath:/templates/
     suffix: .html
     mode: HTML5
     encoding: UTF-8
-    content-type: text/html
+    servlet:
+      content-type: text/html
 
   activemq:
     broker-url: tcp://118.25.15.139:61616
@@ -38,7 +36,6 @@ spring:
     pool:
       enabled: true
       max-connections: 50
-      expiry-timeout: 10000
       idle-timeout: 30000
 
   jms:

@@ -1,6 +1,5 @@
 package com.example.demo.controller;
 
-import com.example.demo.annotation.Animation;
 import com.example.demo.service.ExcelService;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +14,6 @@ import java.io.OutputStream;
  * @since 18/04/2018
  */
 @RestController
-@Animation
 public class ExcelController {
     private ExcelService excelService;
 

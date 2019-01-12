@@ -1,4 +1,4 @@
-package com.example.demo.java_code.hadoop_mapred;
+package com.example.demo.hadoop_mapred;
 
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
