@@ -2,6 +2,12 @@ package com.example.demo.java_code.alg.tree.avl;
 
 import java.util.Comparator;
 
+/**
+ * All copyright by MDMORY.
+ *
+ * @author LiuYajun
+ * @since 19-1-12 下午12:56
+ */
 public class AvlTree<T extends Comparable<T>> {
 
     private AvlNode<T> root;
@@ -64,9 +70,9 @@ public class AvlTree<T extends Comparable<T>> {
      */
     private AvlNode<T> rotateWithLeftChild(AvlNode<T> node) {
         AvlNode<T> left = node.left;
+        node.left = left.right;
         left.right = node;
-        node.left = null;
-        node.h -= 2;
+        node.h -= 1;
         return left;
     }
 
@@ -80,7 +86,7 @@ public class AvlTree<T extends Comparable<T>> {
         n1.left = n2.right;
         n2.left = node;
         n2.right = n1;
-        node.h -= 2;
+        node.h -= 1;
         n1.h += 1;
         n2.h += 1;
         return n2;
@@ -91,9 +97,9 @@ public class AvlTree<T extends Comparable<T>> {
      */
     private AvlNode<T> rotateWithRightChild(AvlNode<T> node) {
         AvlNode<T> right = node.right;
+        node.right = right.left;
         right.left = node;
-        node.right = null;
-        node.h -= 2;
+        node.h -= 1;
         return right;
     }
 

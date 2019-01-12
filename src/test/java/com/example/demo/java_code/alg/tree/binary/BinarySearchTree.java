@@ -3,10 +3,10 @@ package com.example.demo.java_code.alg.tree.binary;
 import java.util.Comparator;
 
 /**
- * All copyright by Liuyajun.
- * <p>
- * Created by mdmor on 2018/10/13
- * </p>
+ * All copyright by MDMORY.
+ *
+ * @author LiuYajun
+ * @since 19-1-12 下午12:56
  */
 public class BinarySearchTree<T extends Comparable<T>> {
     private BinaryNode<T> root;
