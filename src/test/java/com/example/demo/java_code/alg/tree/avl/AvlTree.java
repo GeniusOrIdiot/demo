@@ -22,6 +22,9 @@ public class AvlTree<T extends Comparable<T>> {
         this.comp = comp;
     }
 
+    /**
+     * Insert item x into this avl tree.
+     */
     public AvlNode<T> insert(T x) {
         return root = insert(x, root);
     }
@@ -56,6 +59,7 @@ public class AvlTree<T extends Comparable<T>> {
      * 左子树双旋转
      */
     private AvlNode<T> doubleWithLeftChild(AvlNode<T> node) {
+        /*
         AvlNode<T> n1 = node.left;
         AvlNode<T> n2 = n1.right;
         node.left = n2.right;
@@ -63,6 +67,9 @@ public class AvlTree<T extends Comparable<T>> {
         n2.right = node;
         n2.left = n1;
         return n2;
+        */
+        node.left = rotateWithLeftChild(node.left);
+        return rotateWithLeftChild(node);
     }
 
     /**
@@ -72,7 +79,9 @@ public class AvlTree<T extends Comparable<T>> {
         AvlNode<T> left = node.left;
         node.left = left.right;
         left.right = node;
-        node.h -= 1;
+        /*node.h -= 1;*/
+        setHeight(node);
+        setHeight(left);
         return left;
     }
 
@@ -80,6 +89,7 @@ public class AvlTree<T extends Comparable<T>> {
      * 右子树双旋转
      */
     private AvlNode<T> doubleWithRightChild(AvlNode<T> node) {
+        /*
         AvlNode<T> n1 = node.right;
         AvlNode<T> n2 = n1.left;
         node.right = n2.left;
@@ -90,6 +100,9 @@ public class AvlTree<T extends Comparable<T>> {
         n1.h += 1;
         n2.h += 1;
         return n2;
+        */
+        node.right = rotateWithRightChild(node.right);
+        return rotateWithRightChild(node);
     }
 
     /**
@@ -99,7 +112,9 @@ public class AvlTree<T extends Comparable<T>> {
         AvlNode<T> right = node.right;
         node.right = right.left;
         right.left = node;
-        node.h -= 1;
+        /*node.h -= 1;*/
+        setHeight(node);
+        setHeight(right);
         return right;
     }
 
@@ -113,6 +128,10 @@ public class AvlTree<T extends Comparable<T>> {
 
     private int height(AvlNode<T> node) {
         return node == null ? -1 : node.h;
+    }
+
+    private void setHeight(AvlNode<T> node) {
+        node.h = Math.max(height(node.left), height(node.right)) + 1;
     }
 
     private static class AvlNode<T extends Comparable<T>> {
